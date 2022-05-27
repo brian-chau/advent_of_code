@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'sources/LargeNumber.o', needed by 'practice'.  Stop.
+make: *** No rule to make target 'sources/IOHandler.o', needed by 'practice'.  Stop.
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'sources/LargeNumber.o', needed by 'practice'. 
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 20:04:32 2022
+# Make data base, printed on Fri May 27 13:53:32 2022
 
 # Variables
 
@@ -31,7 +31,7 @@ INCLUDES :=  -I./headers  -I./sources
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/user/repos/cpp_large_numbers
+CURDIR := /home/user/repos/cpp_practice/2021/Day3
 # makefile
 SHELL = /bin/sh
 # makefile (from 'Makefile', line 9)
@@ -41,7 +41,7 @@ VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'Makefile', line 12)
-CFLAGS := -Wall -Werror -g -std=c++17 
+CFLAGS := -Wall -Werror -g -std=c++17 -O2 
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
@@ -51,7 +51,7 @@ XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 30)
-OBJS := sources/LargeNumber.o sources/Fibonacci.o sources/Menu.o sources/main.o
+OBJS := sources/IOHandler.o sources/main.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -65,7 +65,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-cac69220-4061-42dc-8d0e-0734605def1d.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-5a85db40-41c6-4ca2-a960-9c74e8c49137.sock
 # makefile (from 'Makefile', line 23)
 LDFLAGS := 
 # default
@@ -79,15 +79,15 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/user/repos/cpp_large_numbers
+PWD = /home/user/repos/cpp_practice/2021/Day3
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/4179_interop
+WSL_INTEROP = /run/WSL/19462_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
-WT_SESSION = ce12af25-5758-494b-892b-baf6c45cbae7
+WT_SESSION = 73e5233a-62c9-4c8e-a27e-683f3fd9bcbe
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -109,7 +109,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from 'Makefile', line 28)
-SRCS := sources/LargeNumber.cpp sources/Fibonacci.cpp sources/Menu.cpp sources/main.cpp
+SRCS := sources/IOHandler.cpp sources/main.cpp
 # environment
 SHLVL = 1
 # makefile (from 'Makefile', line 8)
@@ -161,7 +161,7 @@ LC_ALL = C
 # environment
 HOSTTYPE = x86_64
 # makefile (from 'Makefile', line 25)
-LIBS := -lncurses -lgmp -lgmpxx
+LIBS := -lgmp -lgmpxx
 # automatic
 ^F = $(notdir $^)
 # default
@@ -189,8 +189,8 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2080, inode 652): 9 files, no impossibilities.
-# sources (device 2080, inode 7137): 6 files, no impossibilities.
+# . (device 2080, inode 52759): 11 files, no impossibilities.
+# sources (device 2080, inode 52747): 4 files, no impossibilities.
 
 # 15 files, no impossibilities in 2 directories.
 
@@ -214,19 +214,13 @@ all: practice
 #  recipe to execute (from 'Makefile', line 38):
 	@echo  '$(MAIN)' has been compiled
 
-# Not a target:
-sources/LargeNumber.o:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
-
 .PHONY: depend clean clean_all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-sources/Menu.cpp:
+sources/IOHandler.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -234,15 +228,9 @@ sources/Menu.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-26 19:04:06.45127547
+#  Last modified 2022-05-27 13:53:09.571658961
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-sources/Fibonacci.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 sources/main.o:
@@ -250,7 +238,7 @@ sources/main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-depend: sources/LargeNumber.cpp sources/Fibonacci.cpp sources/Menu.cpp sources/main.cpp
+depend: sources/IOHandler.cpp sources/main.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -260,12 +248,6 @@ depend: sources/LargeNumber.cpp sources/Fibonacci.cpp sources/Menu.cpp sources/m
 
 # Not a target:
 .DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-sources/Menu.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -280,7 +262,6 @@ sources/Menu.o:
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 50):
@@ -288,29 +269,24 @@ clean:
 	$(RM) $(MAIN).dSYM
 
 # Not a target:
-sources/LargeNumber.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+sources/IOHandler.o:
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
 
 clean_all:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 54):
 	$(RM) sources/*.o *~ $(MAIN)
 	$(RM) $(MAIN).dSYM
 
-# Not a target:
-sources/Fibonacci.cpp:
+practice: sources/IOHandler.o sources/main.o
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-practice: sources/LargeNumber.o sources/Fibonacci.o sources/Menu.o sources/main.o
-#  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-05-27 13:53:12.221658976
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 41):
 	# TODO: If you want to create a normal binary file, use this
@@ -319,19 +295,19 @@ practice: sources/LargeNumber.o sources/Fibonacci.o sources/Menu.o sources/main.
 	# $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@ $^
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/45=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 359 B / avg = 11 B
-# current buf: size = 8162 B / used = 359 B / count = 32 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 272 B / avg = 10 B
+# current buf: size = 8162 B / used = 272 B / count = 27 / avg = 10 B
 
-# strcache performance: lookups = 51 / hit rate = 37%
+# strcache performance: lookups = 47 / hit rate = 42%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=2/51=4%
-# Finished Make data base on Thu May 26 20:04:32 2022
+# Load=27/8192=0%, Rehash=0, Collisions=2/47=4%
+# Finished Make data base on Fri May 27 13:53:32 2022
 
  

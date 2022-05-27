@@ -9,7 +9,7 @@ CC := g++
 RM := rm -rf
 
 # define any compile-time flags
-CFLAGS := -Wall -Werror -g -std=c++17 #-fPIC # Uncomment -fPIC for a shared object
+CFLAGS := -Wall -Werror -g -std=c++17 -O3 #-fPIC # Uncomment -fPIC for a shared object
 
 # define any directories containing header files other than /usr/include
 #
@@ -22,7 +22,7 @@ LFLAGS := -L./libs -L/usr/local/lib
 # TODO: If you want to create a normal binary file, remove this '-shared' flag
 LDFLAGS := #-shared
 
-LIBS := -lncurses -lgmp -lgmpxx
+LIBS := -lgmp -lgmpxx
 
 # define the C++ source files
 SRCS := $(wildcard sources/*.cpp)
