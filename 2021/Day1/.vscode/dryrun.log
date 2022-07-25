@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/user/repos/cpp_advent_of_code/2021/Day1'
+g++ -Wall -Werror -O3 -std=c++17   -I./headers  -I./sources  -I./headers/  -I./sources/ -c sources/main.cpp  -o sources/main.o
+# TODO: If you want to create a normal binary file, use this
+g++ -Wall -Werror -O3 -std=c++17   -I./headers  -I./sources  -I./headers/  -I./sources/ -o exe ./sources/main.o -L./libs 
+# TODO: If you want to create a shared library, use this
+# g++ -Wall -Werror -O3 -std=c++17    -o exe sources/main.o
+echo  'exe' has been compiled
+make: Leaving directory '/home/user/repos/cpp_advent_of_code/2021/Day1'
+ 
