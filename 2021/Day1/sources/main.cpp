@@ -13,7 +13,7 @@ unsigned int Part1() {
     int prevVal(0);
     unsigned int count(0);
     for (int i = 0; std::getline(infile, line); i++) {
-        int curVal(atof(line.c_str()));
+        int curVal(atoi(line.c_str()));
         if (i > 0 && curVal > prevVal) {
             count++;
         }
@@ -31,7 +31,7 @@ unsigned int Part2() {
     int summation(0);
     int prevSummation(0);
     for (int i = 0; std::getline(infile, line); i++) {
-        summation += atof(line.c_str());
+        summation += atoi(line.c_str());
         if (i >= 3) {
             summation -= q.front();
             if (summation > prevSummation) {
