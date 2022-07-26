@@ -17,12 +17,15 @@ int Part1() {
         std::istream_iterator<std::string> end;
         std::vector<std::string> vstrings(begin, end);
 
-        if (vstrings[0] == "forward") {
-            horiz += atoi(vstrings[1].c_str());
-        } else if (vstrings[0] == "up") {
-            depth -= atoi(vstrings[1].c_str());
-        } else if (vstrings[0] == "down") {
-            depth += atoi(vstrings[1].c_str());
+        std::string direction(vstrings[0]);
+        int X(atoi(vstrings[1].c_str()));
+
+        if (direction == "forward") {
+            horiz += X;
+        } else if (direction == "up") {
+            depth -= X;
+        } else if (direction == "down") {
+            depth += X;
         }
     }
 
@@ -34,6 +37,7 @@ int Part2() {
     std::string line;
 
     unsigned int horiz(0);
+
     int depth(0);
     int aim(0);
 
@@ -43,15 +47,15 @@ int Part2() {
         std::istream_iterator<std::string> end;
         std::vector<std::string> vstrings(begin, end);
 
-        if (vstrings[0] == "forward") {
-            horiz += atoi(vstrings[1].c_str());
-            depth += aim * atoi(vstrings[1].c_str());
-        } else if (vstrings[0] == "up") {
-            depth -= atoi(vstrings[1].c_str());
-            aim -= atoi(vstrings[1].c_str());
-        } else if (vstrings[0] == "down") {
-            depth += atoi(vstrings[1].c_str());
-            aim += atoi(vstrings[1].c_str());
+        std::string direction(vstrings[0]);
+        int X(atoi(vstrings[1].c_str()));
+        if (direction == "forward") {
+            horiz += X;
+            depth += aim * X;
+        } else if (direction == "up") {
+            aim -= X;
+        } else if (direction == "down") {
+            aim += X;
         }
     }
 
