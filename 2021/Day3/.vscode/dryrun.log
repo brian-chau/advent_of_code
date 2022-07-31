@@ -1,11 +1,11 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/user/repos/cpp_practice/2021/Day3'
-g++ -Wall -Werror -g -std=c++17 -O2   -I./headers  -I./sources -c sources/IOHandler.cpp  -o sources/IOHandler.o
-g++ -Wall -Werror -g -std=c++17 -O2   -I./headers  -I./sources -c sources/main.cpp  -o sources/main.o
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/user/repos/cpp_advent_of_code/2021/Day3'
+g++ -Wall -Werror -g -std=c++17 -O3   -I./headers  -I./sources -c sources/IOHandler.cpp  -o sources/IOHandler.o
+g++ -Wall -Werror -g -std=c++17 -O3   -I./headers  -I./sources -c sources/main.cpp  -o sources/main.o
 # TODO: If you want to create a normal binary file, use this
-g++ -Wall -Werror -g -std=c++17 -O2   -I./headers  -I./sources -o practice sources/IOHandler.o sources/main.o -L./libs -L/usr/local/lib -lgmp -lgmpxx
+g++ -Wall -Werror -g -std=c++17 -O3   -I./headers  -I./sources -o practice sources/IOHandler.o sources/main.o -L./libs -L/usr/local/lib -lgmp -lgmpxx
 # TODO: If you want to create a shared library, use this
-# g++ -Wall -Werror -g -std=c++17 -O2   -lgmp -lgmpxx -o practice sources/IOHandler.o sources/main.o
+# g++ -Wall -Werror -g -std=c++17 -O3   -lgmp -lgmpxx -o practice sources/IOHandler.o sources/main.o
 echo  'practice' has been compiled
-make: Leaving directory '/home/user/repos/cpp_practice/2021/Day3'
+make: Leaving directory '/home/user/repos/cpp_advent_of_code/2021/Day3'
  

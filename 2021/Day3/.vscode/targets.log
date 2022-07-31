@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'sources/IOHandler.o', needed by 'practice'.  Stop.
+make: *** No rule to make target 'sources/main.o', needed by 'practice'.  Stop.
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'sources/IOHandler.o', needed by 'practice'.  S
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 13:53:32 2022
+# Make data base, printed on Sun Jul 31 13:38:59 2022
 
 # Variables
 
@@ -17,13 +17,13 @@ make: *** No rule to make target 'sources/IOHandler.o', needed by 'practice'.  S
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+PLATFORMIO_IDE = 2.5.0
 # makefile (from 'Makefile', line 17)
 INCLUDES :=  -I./headers  -I./sources
 # automatic
@@ -31,7 +31,7 @@ INCLUDES :=  -I./headers  -I./sources
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/user/repos/cpp_practice/2021/Day3
+CURDIR := /home/user/repos/cpp_advent_of_code/2021/Day3
 # makefile
 SHELL = /bin/sh
 # makefile (from 'Makefile', line 9)
@@ -41,15 +41,13 @@ VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'Makefile', line 12)
-CFLAGS := -Wall -Werror -g -std=c++17 -O2 
+CFLAGS := -Wall -Werror -g -std=c++17 -O3 
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
-# environment
-VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 30)
 OBJS := sources/IOHandler.o sources/main.o
 # environment
@@ -59,13 +57,13 @@ VSCODE_CWD = /mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/user/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Users/brian/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files (x86)/Notepad++:/mnt/c/Users/brian/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/GNAT/2021/bin:/mnt/c/Program Files/Oracle/VirtualBox:/mnt/c/scripts:/mnt/c/platform-tools:/mnt/c/Program Files/Git:/mnt/c/Program Files/Git/bin:/mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+NO_PROXY = 127.0.0.1
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
-VSCODE_LOG_STACK = false
+ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-5a85db40-41c6-4ca2-a960-9c74e8c49137.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-91166e1a-27e3-433b-9589-860296c7c9b7.sock
 # makefile (from 'Makefile', line 23)
 LDFLAGS := 
 # default
@@ -77,17 +75,13 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 DISPLAY = :0
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
-PWD = /home/user/repos/cpp_practice/2021/Day3
+PWD = /home/user/repos/cpp_advent_of_code/2021/Day3
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/19462_interop
+WSL_INTEROP = /run/WSL/8737_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
-# environment
-WT_SESSION = 73e5233a-62c9-4c8e-a27e-683f3fd9bcbe
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -97,17 +91,21 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = user
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
+# environment
+PLATFORMIO_PATH = /home/user/.platformio/python3/bin:/home/user/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Users/brian/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files (x86)/Notepad++:/mnt/c/Users/brian/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/GNAT/2021/bin:/mnt/c/Program Files/Oracle/VirtualBox:/mnt/c/scripts:/mnt/c/platform-tools:/mnt/c/Program Files/Git:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git/bin:/mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/brian/.dotnet/tools:/snap/bin:/usr/local/go/bin
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# environment
+PATH = /home/user/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Users/brian/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files (x86)/Notepad++:/mnt/c/Users/brian/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/GNAT/2021/bin:/mnt/c/Program Files/Oracle/VirtualBox:/mnt/c/scripts:/mnt/c/platform-tools:/mnt/c/Program Files/Git:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git/bin:/mnt/c/Users/brian/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/brian/.dotnet/tools:/snap/bin:/usr/local/go/bin
 # makefile (from 'Makefile', line 28)
 SRCS := sources/IOHandler.cpp sources/main.cpp
 # environment
@@ -150,12 +148,12 @@ MAIN := practice
 +F = $(notdir $+)
 # environment
 VSCODE_HANDLES_SIGPIPE = true
-# environment
-WT_PROFILE_ID = {07b52e3e-de2c-5db4-bd2d-ba144ed6c273}
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+PLATFORMIO_CALLER = vscode
 # environment
 LC_ALL = C
 # environment
@@ -177,11 +175,11 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_EXTHOST_WILL_SEND_SOCKET = true
-# environment
 WSL_DISTRO_NAME = Ubuntu-20.04
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=84/1024=8%, Rehash=0, Collisions=6/115=5%
+# Load=83/1024=8%, Rehash=0, Collisions=7/114=6%
 
 # Pattern-specific Variable Values
 
@@ -189,10 +187,10 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2080, inode 52759): 11 files, no impossibilities.
-# sources (device 2080, inode 52747): 4 files, no impossibilities.
+# . (device 2080, inode 144263): 12 files, no impossibilities.
+# sources (device 2080, inode 144293): 5 files, no impossibilities.
 
-# 15 files, no impossibilities in 2 directories.
+# 17 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -228,14 +226,14 @@ sources/IOHandler.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-27 13:53:09.571658961
+#  Last modified 2022-07-25 23:09:28.893724147
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
 
 depend: sources/IOHandler.cpp sources/main.cpp
@@ -271,14 +269,15 @@ clean:
 # Not a target:
 sources/IOHandler.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-07-31 13:38:37.328716999
+#  File has been updated.
+#  Successfully updated.
 
 clean_all:
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
- 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 54):
 	$(RM) sources/*.o *~ $(MAIN)
@@ -286,7 +285,7 @@ clean_all:
 
 practice: sources/IOHandler.o sources/main.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-27 13:53:12.221658976
+#  Last modified 2022-07-24 18:35:34.19800206
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 41):
 	# TODO: If you want to create a normal binary file, use this
@@ -302,12 +301,12 @@ practice: sources/IOHandler.o sources/main.o
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 272 B / avg = 10 B
-# current buf: size = 8162 B / used = 272 B / count = 27 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 298 B / avg = 10 B
+# current buf: size = 8162 B / used = 298 B / count = 29 / avg = 10 B
 
-# strcache performance: lookups = 47 / hit rate = 42%
+# strcache performance: lookups = 49 / hit rate = 40%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=2/47=4%
-# Finished Make data base on Fri May 27 13:53:32 2022
+# Load=29/8192=0%, Rehash=0, Collisions=2/49=4%
+# Finished Make data base on Sun Jul 31 13:38:59 2022
 
  

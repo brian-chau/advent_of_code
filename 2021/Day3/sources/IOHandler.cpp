@@ -4,7 +4,8 @@
 #include <fstream>
 
 IOHandler::IOHandler(std::string filename)
-    : m_Filename(filename), m_NumBits(0) {
+    : m_Filename(filename)
+    , m_NumBits(0) {
 }
 
 IOHandler::~IOHandler() {
