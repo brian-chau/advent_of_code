@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-int Part1(){
+int Part1() {
     std::ifstream in("input.txt");
     std::string line;
     int fuel(0);
@@ -13,7 +13,7 @@ int Part1(){
     return fuel;
 }
 
-int Part2(){
+int Part2() {
     std::ifstream in("input.txt");
     std::string line;
     int mass(0), fuel(0), totalFuel(0);
