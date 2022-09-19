@@ -1,18 +1,19 @@
 #include <fmt/format.h>
 
+#include <array>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 
-void readFile(std::vector<int>& numbers, std::string filename) {
+void readFile(std::vector<uint64_t>& numbers, std::string filename) {
     std::ifstream inFile(filename.c_str());
     std::string line;
     std::getline(inFile, line);
     std::stringstream ss(line);
 
-    for (int i; ss >> i;) {
+    for (uint64_t i; ss >> i;) {
         numbers.push_back(i);
         if (ss.peek() == ',') {
             ss.ignore();
@@ -20,34 +21,50 @@ void readFile(std::vector<int>& numbers, std::string filename) {
     }
 }
 
-void Part1(std::vector<int>& numbers) {
-    std::vector<int> result(numbers);
-    for (long unsigned int i = 0; i < numbers.size(); i++) {
-        result[i] -= 1;
-        if (result[i] < 0) {
-            result[i] = 6;
-            result.push_back(8);
+uint64_t Parts1and2(std::vector<uint64_t>& numbers, uint64_t days) {
+    uint64_t fishes[9];
+    memset(fishes, 0, 9 * sizeof(uint64_t));
+
+    for (auto num : numbers) {
+        fishes[num]++;
+    }
+
+    for (unsigned int day = 0; day < days;) {
+        uint64_t sum(0);
+        for (auto count : fishes) {
+            sum += count;
+        }
+
+        day++;
+        uint64_t newFishes[9];
+        memset(newFishes, 0, 9 * sizeof(uint64_t));
+        for (size_t i = 0; i < 9; i++) {
+            uint64_t count(fishes[i]);
+            if (i == 0) {
+                newFishes[6] += count;
+                newFishes[8] += count;
+            } else {
+                newFishes[i - 1] += count;
+            }
+        }
+        for (unsigned int i = 0; i < 9; i++) {
+            fishes[i] = newFishes[i];
         }
     }
-    numbers.clear();
-    for (int i : result) {
-        fmt::print("{} ", i);
+
+    uint64_t res(0);
+    for (auto count : fishes) {
+        res += count;
     }
-    fmt::print("\n");
-    std::copy(result.begin(), result.end(), std::back_inserter(numbers));
+    return res;
 }
 
-void Part2(std::vector<int>& numbers) {
-    return;
-}
-
-int main() {
-    std::vector<int> numbers;
+int main(int argc, char** argv) {
+    std::vector<uint64_t> numbers;
     readFile(numbers, "input.txt");
-    unsigned int nDays1(10);
-    for (unsigned int i = 0; i < nDays1; i++) {
-        Part1(numbers);
-    }
-    fmt::print("{}\n", numbers.size());
+
+    std::cout << Parts1and2(numbers, 80) << std::endl;
+    std::cout << Parts1and2(numbers, 256) << std::endl;
+
     return 0;
 }
