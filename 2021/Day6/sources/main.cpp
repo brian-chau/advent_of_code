@@ -22,23 +22,26 @@ void readFile(std::vector<uint64_t>& numbers, std::string filename) {
 }
 
 uint64_t Parts1and2(std::vector<uint64_t>& numbers, uint64_t days) {
-    uint64_t fishes[9];
-    memset(fishes, 0, 9 * sizeof(uint64_t));
+// This algorithm counts the number of times each "count" is hit.
+// Each count will be hit at least one time, where each count is
+// a number from 0 through 8.
+#define COUNTS 9
+    uint64_t fishes[COUNTS];
+    memset(fishes, 0, COUNTS * sizeof(uint64_t));
 
     for (auto num : numbers) {
         fishes[num]++;
     }
 
-    for (unsigned int day = 0; day < days;) {
+    for (unsigned int day = 0; day < days; day++) {
         uint64_t sum(0);
         for (auto count : fishes) {
             sum += count;
         }
 
-        day++;
-        uint64_t newFishes[9];
-        memset(newFishes, 0, 9 * sizeof(uint64_t));
-        for (size_t i = 0; i < 9; i++) {
+        uint64_t newFishes[COUNTS];
+        memset(newFishes, 0, COUNTS * sizeof(uint64_t));
+        for (size_t i = 0; i < COUNTS; i++) {
             uint64_t count(fishes[i]);
             if (i == 0) {
                 newFishes[6] += count;
@@ -47,7 +50,7 @@ uint64_t Parts1and2(std::vector<uint64_t>& numbers, uint64_t days) {
                 newFishes[i - 1] += count;
             }
         }
-        for (unsigned int i = 0; i < 9; i++) {
+        for (unsigned int i = 0; i < COUNTS; i++) {
             fishes[i] = newFishes[i];
         }
     }
